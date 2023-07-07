@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #e793f0;
+    margin: 0;
+    padding: 0;
+  }
+
+  h1 {
+    text-align: center;
+    color: #333333;
+    margin-top: 50px;
+  }
+
+  .navbar {
+    background-color: #333333;
+    padding: 10px 0;
+  }
+
+  .navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  .navbar li {
+    display: inline-block;
+    margin-right: 20px;
+  }
+
+  .navbar li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+  }
+
+  #movie-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 50px;
+  }
+
+  .movie-details {
+    border: 1px solid #e6e6e6;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
+    max-width: 300px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .movie-details:hover {
+    transform: scale(1.05);
+  }
+
+  .movie-details img {
+    max-width: 100%; /* Adjust the value as needed */
+    max-height: 200px; /* Adjust the value as needed */
+    object-fit: cover; /* Preserve aspect ratio and fill the container */
+  }
+
+  #balance-display {
+  background-color: #ffffff; 
+  color: #cb4a4a; 
+  padding: 20px; /* Set padding for content inside the div */
+  }
+
+  

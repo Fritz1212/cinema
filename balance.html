@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Balance Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+
+    .navbar {
+      background-color: #333333;
+      padding: 10px 0;
+    }
+
+    .navbar ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    .navbar li {
+      display: inline-block;
+      margin-right: 20px;
+    }
+
+    .navbar li a {
+      text-decoration: none;
+      color: #ffffff;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #ffffff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .balance {
+      text-align: center;
+      font-size: 24px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="navbar">
+    <ul>
+      <li><a href="index.html">Movies</a></li>
+      <li><a href="balance.html">Balances</a></li>
+      <li><a href="historyTransaction.html">Transaction</a></li>
+    </ul>
+  </div>
+  <div class="container">
+    <h1>Balance Page</h1>
+    <div class="balance" id="balance-display">
+      Your current balance is: <span class="balance" id="balance-display"></span> <span id="balanceDisplay"></span>
+    </div>
+    <div class="top-up-buttons">
+      <button id="top-up-btn">Top Up Balance</button>
+      <button id="withdraw-btn">Withdraw Balance</button>
+    </div>
+  </div>
+  <script src="balance.js"></script>
+</body>
+
+</html>
