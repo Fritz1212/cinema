@@ -17,13 +17,34 @@ document.addEventListener('DOMContentLoaded', () => {
   
   function selectSeat(event) {
     const button = event.target;
-    const movieInfo = button.dataset.movieInfo;
-    const { title, ticket_price, age_rating } = JSON.parse(movieInfo);
+    let movieInfo = button.dataset.movieInfo;
+    let title, ticket_price, age_rating;
+    try {
+        const parsedMovieInfo = JSON.parse(movieInfo);
+        title = parsedMovieInfo.title;
+        console.log(title);
+        ticket_price = parsedMovieInfo.ticket_price;
+        age_rating = parsedMovieInfo.age_rating;
+    } catch (error) {
+        console.error(error);
+        // Attempt to fix the JSON data
+        movieInfo = movieInfo.slice(0, 205) + '"' + movieInfo.slice(205);
+        try {
+            const parsedMovieInfo = JSON.parse(movieInfo);
+            title = parsedMovieInfo.title;
+            ticket_price = parsedMovieInfo.ticket_price;
+            age_rating = parsedMovieInfo.age_rating;
+        } catch (error) {
+            console.error(error);
+            // handle the error here
+        }
+    }
     localStorage.setItem('movieTitle', title);
     localStorage.setItem('moviePrice', ticket_price);
     localStorage.setItem('movieAge', age_rating);
-    window.location.href = 'seating.html'; // Redirect to seating.html
-  }
+    window.location.href = 'seating.html'; 
+}
+
 
   function createMovieHTML(movieDetails) {
     const movieItemHTML = `
@@ -58,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const selectSeatButtons = document.querySelectorAll(".selectSeat");
       selectSeatButtons.forEach(button => {
-        button.addEventListener("click", selectSeat);
+      button.addEventListener("click", selectSeat);
       });
 
       updateBalanceDisplay();

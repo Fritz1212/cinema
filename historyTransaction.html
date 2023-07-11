@@ -1,26 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Transaction History</title>
   <style>
-    table {
-      border-collapse: collapse;
-      width: 100%;
-    }
-    
-    th, td {
-      border: 1px solid black;
-      padding: 8px;
-    }
-    
-    th {
-      background-color: #f2f2f2;
-    }
+   
   </style>
 </head>
 <body>
+  <div class="navbar">
+    <ul>
+      <li><a href="index.html">Movies</a></li>
+      <li><a href="balance.html">Balances</a></li>
+      <li><a href="historyTransaction.html">Transaction</a></li>
+    </ul>
+  </div>
   <h1>Transaction History</h1>
-  <table>
+  <div class="center">
+    <table class="content-table">
     <thead>
       <tr>
         <th>Name</th>
@@ -29,7 +26,7 @@
         <th>Seat Number</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody id="body">
       <tr>
         <td id="nameHistory"></td>
         <td id="titleHistory"></td>
@@ -37,8 +34,12 @@
         <td id="seatHistory"></td>
       </tr>
     </tbody>
-  </table>
-
+    </table>
+  </div>
+<div class="button-wrap">
+  <button id="reset">Reset</button>
+</div>
   <script src="historyTrans.js"></script>
+  <link rel="stylesheet" href="historyTrans.css">
 </body>
 </html>

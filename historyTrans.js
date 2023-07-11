@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const nameDisplay = document.getElementById("nameHistory");
     const totalDisplay = document.getElementById("priceHistory");
     const seatDisplay = document.getElementById("seatHistory");
+    const button = document.getElementById("reset")
   
     const name = localStorage.getItem('name');
     const movie = localStorage.getItem('movieTitle');
@@ -17,9 +18,15 @@ document.addEventListener('DOMContentLoaded', () => {
       movie: movie,
       ticketPrice: ticketPrice
     };
-  
+    
+    // Check if the ticket already exists in the tickets array
+    const isDuplicate = tickets.some(ticket => ticket.name === newTicket.name);
+
+    // Add the new ticket if it's not a duplicate
+    if (!isDuplicate) {
     tickets.push(newTicket);
-  
+    }
+
     localStorage.setItem('tickets', JSON.stringify(tickets));
   
     nameDisplay.innerText = newTicket.name;
@@ -39,5 +46,13 @@ document.addEventListener('DOMContentLoaded', () => {
       `;
       tableBody.appendChild(row);
     }
+
+    button.addEventListener("click", resetRow);
+
+    function resetRow() {
+      document.getElementById("body").remove();
+      localStorage.removeItem('tickets')
+    }
+
   });
   

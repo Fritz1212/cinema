@@ -1,10 +1,13 @@
 const movieContainer = document.getElementById("movie-container");
+const accountName = localStorage.getItem("username");
+
+document.getElementById("account-name").innerText = "Hi ! " + accountName
 
 fetch('https://seleksi-sea-2023.vercel.app/api/movies')
   .then(response => response.json())
   .then(data => {
     let movieHTML = '';
-    let movieTitles = data.map(movie => movie.title);
+    let movieTitles = data.map(movie => movie.title); 
 
     for (let i = 0; i < data.length; i++) {
       const movieDetails = data[i];
