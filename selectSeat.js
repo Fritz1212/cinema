@@ -22,7 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
     try {
         const parsedMovieInfo = JSON.parse(movieInfo);
         title = parsedMovieInfo.title;
-        console.log(title);
         ticket_price = parsedMovieInfo.ticket_price;
         age_rating = parsedMovieInfo.age_rating;
     } catch (error) {

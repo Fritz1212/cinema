@@ -15,14 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
         alert('You must be at least ' + movieAge + ' years old to proceed.');
         localStorage.setItem('name', name);
         localStorage.setItem('age', age);
-        console.log(age)
-        console.log(movieAge)
         return; 
       } else {
-
-      console.log(age)
-      console.log(movieAge)
-
       localStorage.setItem('name', name);
       localStorage.setItem('age', age);
   

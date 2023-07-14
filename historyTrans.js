@@ -8,7 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const name = localStorage.getItem('name');
     const movie = localStorage.getItem('movieTitle');
     const ticketPrice = localStorage.getItem('ticketPrice');
-  
+    const seat = localStorage.getItem("selectedSeats");
+
     // Retrieve existing tickets from localStorage
     let tickets = JSON.parse(localStorage.getItem('tickets')) || [];
   
@@ -16,7 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const newTicket = {
       name: name,
       movie: movie,
-      ticketPrice: ticketPrice
+      ticketPrice: ticketPrice,
+      seat: seat
     };
     
     // Check if the ticket already exists in the tickets array
@@ -32,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     nameDisplay.innerText = newTicket.name;
     titleDisplay.innerText = newTicket.movie;
     totalDisplay.innerText = newTicket.ticketPrice;
+    seatDisplay.innerText = newTicket.seat;
   
     const tableBody = document.querySelector('tbody');
     tableBody.innerHTML = ''; 
